@@ -8,3 +8,4 @@ In file imdb_sync.py, update the 2 variables *autodlCfgFilePath* and *imdbWatchl
 
 # Running the script
 The script can be run simply by calling "python imdb_sync.py". This will automatically get the IMDB watchlist and add any new movies to your autodl.cfg file. The movies will be automatically downloaded once if auto-irssi is setup properly.
+Script can also be called from crontab entry as such: "@hourly python $(path to imdb_sync.py)/imdb_sync.py"
