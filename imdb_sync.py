@@ -5,21 +5,31 @@ import feedparser
 import os
 import datetime
 
+####################### USER CONFIGURABLE VARS ########################## 
 autodlCfgFilePath = "/media/sdl1/home/shyam2007/.autodl"
-autodlCfgFileName = "autodl.cfg"
 imdbWatchlistPath = "http://rss.imdb.com/user/ur30191084/watchlist"
-oldWatchlistPath = "/media/sdl1/home/shyam2007/.autodl"
+matchCategories = "MovieHD"
+matchSites = "ar"
+minSize = "1GB"
+maxSize = "10GB"
+resolution = "720p, 1080p"
+uploadType = "watchdir"
+uploadWatchDir = "/media/sdl1/home/shyam2007/private/deluge/movies_watch/"
+#########################################################################
+
+autodlCfgFileName = "autodl.cfg"
+oldWatchlistPath = autodlCfgFilePath 
 oldWatchlistName = "oldWatchlist.txt"
 
 def addCommonParamsToFile ( autodlCfgFileObject ):
 
-	autodlCfgFileObject.write( "match-categories = MovieHD\n");
-   	autodlCfgFileObject.write( "match-sites = ar\n");
-   	autodlCfgFileObject.write( "min-size = 1GB\n");
-   	autodlCfgFileObject.write( "max-size = 10GB\n");
-   	autodlCfgFileObject.write( "resolutions = 720p, 1080p\n");
-   	autodlCfgFileObject.write( "upload-type = watchdir\n");
-   	autodlCfgFileObject.write( "upload-watch-dir = /media/sdl1/home/shyam2007/private/deluge/movies_watch/\n");
+	autodlCfgFileObject.write( "match-categories = " + matchCategories + "\n");
+   	autodlCfgFileObject.write( "match-sites = " + matchSites + "\n");
+   	autodlCfgFileObject.write( "min-size = " + minSize + "\n");
+   	autodlCfgFileObject.write( "max-size = " + maxSize + "\n");
+   	autodlCfgFileObject.write( "resolutions = " + resolution + "\n");
+   	autodlCfgFileObject.write( "upload-type = " + uploadType + "\n");
+   	autodlCfgFileObject.write( "upload-watch-dir = " + uploadWatchDir + "\n");
 
 	return
 
